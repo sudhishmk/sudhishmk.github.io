@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudhish Nair - Portfolio</title>
-    <meta name="description" content="Portfolio of Sudhish Nair, Senior Software Maintenance Engineer specializing in cloud-native technologies, OpenShift, and middleware. Explore projects, contributions, and speaking engagements.">
+    <meta name="description" content="Portfolio of Sudhish Nair, Senior Software Maintenance Engineer specializing in cloud-native technologies, OpenShift, and middleware. Explore featured work, open-source contributions, and conference talks.">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -62,6 +62,28 @@
         .section ul li strong {
             font-weight: bold;
             color: #0056b3;
+        }
+
+        .featured-work {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .work-card {
+            padding: 20px;
+            border: 1px solid #d9eaf8;
+            border-radius: 10px;
+            background: #f8fcff;
+        }
+
+        .work-card h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        .work-card p {
+            line-height: 1.6;
         }
 
         footer {
@@ -151,6 +173,22 @@
         </section>
 
         <section class="section">
+            <h2>Featured Work</h2>
+            <div class="featured-work">
+                <article class="work-card">
+                    <h3>Finance Tracker</h3>
+                    <p>A personal finance application built to make everyday financial tracking more approachable and useful.</p>
+                    <a href="https://github.com/sudhishmk/finance-tracker" target="_blank" rel="noopener noreferrer">View the project on GitHub</a>
+                </article>
+                <article class="work-card">
+                    <h3>Anyfea</h3>
+                    <p>Designed the website experience for Anyfea, with a focus on a clear and engaging web presence.</p>
+                    <a href="https://staging.anyfea.com/" target="_blank" rel="noopener noreferrer">Visit the website</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
             <h2>Links</h2>
             <ul>
                 <li><a href="https://github.com/sudhishmk" target="_blank">GitHub</a></li>
@@ -162,6 +200,7 @@
         <section class="section">
             <h2>Conferences & Speaking Engagements</h2>
             <ul>
+                <li><strong>KubeCon + CloudNativeCon India 2026</strong> - From Textbooks to YAML: Mapping Your CS Degree to the Cloud Native World - <a href="https://kccncind2026.sched.com/event/2IW4H/from-textbooks-to-yaml-mapping-your-cs-degree-to-the-cloud-native-world-parvathy-nair-adi-shankara-institute-of-engineering-and-technology-sudhish-nair-red-hat" target="_blank" rel="noopener noreferrer">Schedule</a> | <a href="https://docs.google.com/presentation/d/1tnSTh4ydSbbW4Wj1Kx4KZLFwgzniK-Ml/edit?usp=sharing&amp;ouid=110416375121162361517&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">PPT</a> | <a href="https://www.youtube.com/watch?v=4PXcoIambCU&amp;list=PLj6h78yzYM2PmaTdAzefPqjawTlop1lgG&amp;index=15" target="_blank" rel="noopener noreferrer">Video</a></li>
                 <li><strong>DMCON 2025</strong> - Backstage Unlocked -: Building Developer Portals that Scale - <a href="https://docs.google.com/presentation/d/1SWN3i9zhw5eiim-wdyRq_hqxLs2mdM7R/edit?usp=sharing&ouid=110416375121162361517&rtpof=true&sd=true" target="_blank">PPT</a> 
                 <li><strong>DevConf.in 2025</strong> - Automating AI/ML workflows with Red Hat OpenShift AI - <a href="https://docs.google.com/presentation/d/1E2O8WiQD2JGiQtNrOc8hZDceOJKS4qaOe4PbNhxqicA/edit?usp=sharing" target="_blank">PPT</a> | <a href="https://www.youtube.com/watch?v=GOK9g8XCb3o&list=PLU1vS0speL2ZvQRS0Hg0xIgTPOyxUmBK4&index=46" target="_blank">Video</a></li>
                 <li><strong>KCD Kerala 2024</strong> - Pipelines for Kubernetes -: Tekton - <a href="https://docs.google.com/presentation/d/1PHgi4QO8rTp6qfgJT2sKps3EYvKQq1a7u7wfcUxXJw8/edit?usp=sharing" target="_blank">PPT</a> | <a href="https://youtu.be/rTs5qJa3hNM?feature=shared" target="_blank">Video</a></li>
@@ -177,7 +216,7 @@
         </section>
 
         <footer>
-            <p>© 2025 Sudhish Nair | Contact: sudhinonofficial@gmail.com</p>
+            <p>© 2026 Sudhish Nair | Contact: sudhinonofficial@gmail.com</p>
         </footer>
     </div>
 
