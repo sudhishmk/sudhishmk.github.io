@@ -7,26 +7,27 @@
     <meta name="description" content="Portfolio of Sudhish Nair, Principal Software Maintenance Engineer specializing in cloud-native technologies, OpenShift, and middleware. Explore personal projects, open-source contributions, and conference talks.">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #e0f7fa, #c2e0f9);
-            color: #333;
+            background: linear-gradient(145deg, #edf8ff, #d8eaf9);
+            color: #1e293b;
+            line-height: 1.65;
+            scroll-behavior: smooth;
         }
 
         .container {
-            width: 80%;
-            max-width: 960px;
-            margin: 30px auto;
+            width: min(92%, 1040px);
+            margin: 36px auto;
             background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            padding: clamp(24px, 5vw, 52px);
+            border-radius: 20px;
+            box-shadow: 0 18px 50px rgba(15, 75, 130, 0.14);
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin: 42px 0 30px;
         }
 
         header img {
@@ -34,19 +35,57 @@
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid #007bff;
+            margin-bottom: 12px;
+            border: 5px solid #2f80ed;
+            box-shadow: 0 8px 24px rgba(47, 128, 237, 0.2);
         }
 
         h1, h2 {
-            color: #007bff;
-            text-shadow: 1px 1px 2px rgba(0, 123, 255, 0.3);
+            color: #125ca8;
+            text-shadow: none;
+            letter-spacing: -0.02em;
         }
 
+        h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin: 0; }
+
+        h2 { font-size: 1.45rem; margin-top: 0; }
+
+        .role { color: #475569; font-size: 1.1rem; margin: 4px 0 0; }
+
+        .site-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .site-nav a { font-size: 0.94rem; font-weight: 650; color: #475569; }
+        .site-nav a:hover { color: #125ca8; text-decoration: none; }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 0 0 42px;
+        }
+
+        .highlight {
+            padding: 16px;
+            text-align: center;
+            border: 1px solid #dbeafe;
+            border-radius: 12px;
+            background: #f8fbff;
+        }
+
+        .highlight strong { display: block; color: #125ca8; font-size: 1.05rem; }
+        .highlight span { color: #64748b; font-size: 0.9rem; }
+
         .section {
-            margin-bottom: 40px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
+            margin-bottom: 42px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 28px;
         }
 
         .section ul {
@@ -73,8 +112,15 @@
         .work-card {
             padding: 20px;
             border: 1px solid #d9eaf8;
-            border-radius: 10px;
+            border-radius: 12px;
             background: #f8fcff;
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-4px);
+            border-color: #a7d1fb;
+            box-shadow: 0 10px 24px rgba(30, 100, 160, 0.12);
         }
 
         .work-card h3 {
@@ -104,25 +150,57 @@
             color: #0056b3;
             text-decoration: underline;
         }
+
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 450ms ease, transform 450ms ease;
+        }
+
+        .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 620px) {
+            .container { margin: 0; width: auto; border-radius: 0; }
+            .highlights { grid-template-columns: 1fr; }
+            header { margin-top: 32px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+            .js .reveal { opacity: 1; transform: none; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#talks">Talks</a>
+            <a href="#contact">Contact</a>
+        </nav>
         <header>
             <img src="resources/A98_1192.JPG" alt="Sudhish Nair">
             <h1>Sudhish Nair</h1>
-            <p>Principal Software Maintenance Engineer</p>
+            <p class="role">Principal Software Maintenance Engineer</p>
         </header>
 
-        <section class="section">
+        <section class="highlights reveal" aria-label="Career highlights">
+            <div class="highlight"><strong>Principal Software Maintenance Engineer</strong><span>Cloud-native support &amp; engineering</span></div>
+            <div class="highlight"><strong>13+ years</strong><span>Development and customer support</span></div>
+            <div class="highlight"><strong>KubeCon speaker</strong><span>Cloud-native community contributor</span></div>
+        </section>
+
+        <section class="section reveal" id="about">
             <h2>About Me</h2>
             <p>
                 Principal Software Maintenance Engineer at Red Hat India Pvt. Ltd. with 13+ years of experience in development and support across diverse products and technologies. Specialized in cloud-native solutions, including OpenShift Pipelines (Tekton), GitOps (ArgoCD), and middleware platforms like JBoss EAP, OpenJDK, Quarkus, and jBPM. Expertise spans Golang, Kubernetes, Java, Quarkus, and jBPM. Passionate about open-source, actively contributing to projects and sharing knowledge through blog posts and conference talks.
             </p>
         </section>
 
-        <section class="section">
+        <section class="section reveal">
             <h2>Education Qualification</h2>
             <ul>
                 <li><strong>Master of Science in Artificial Intelligence</strong> — Currently pursuing at <a href="https://woolf.university/" target="_blank" rel="noopener noreferrer">Woolf University</a></li>
@@ -130,7 +208,7 @@
             </ul>
         </section>
         
-        <section class="section">
+        <section class="section reveal" id="skills">
             <h2>Skills</h2>
             <ul>
                 <li><strong>Cloud-Native:</strong> Kubernetes, OpenShift, Tekton, ArgoCD, Helm, Operators, backstage </li>
@@ -146,7 +224,7 @@
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section reveal">
             <h2>Credentials</h2>
             <ul>
                 <li><a href="https://www.credly.com/badges/055cfe91-d846-4cbb-9cb4-4452a5d84cc7/linked_in_profile" target="_blank">Developing and Deploying AI/ML Applications on Red Hat OpenShift AI (AI267) - Ver. 2.13 Training</a></li>
@@ -155,7 +233,7 @@
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section reveal">
             <h2>Experience</h2>
             <ul>
                 <li><strong>1. Principal Software Maintenance Engineer (current position), Red Hat India Pvt. Ltd.</strong> (8+ years) - Focused on cloud-native solutions, middleware platforms, and automation.</li>
@@ -163,7 +241,7 @@
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section reveal">
             <h2>Projects and Contributions</h2>
             <ul>
                 <li><strong>OpenShift Pipelines (Tekton):</strong> Provides support to client to install, develop and implement CI/CD architecture using Openshift pipelines, contributed to bug fixes, feature enhancements, and documentation.</li>
@@ -174,7 +252,7 @@
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section reveal" id="projects">
             <h2>Personal Projects</h2>
             <div class="personal-projects">
                 <article class="work-card">
@@ -190,7 +268,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section reveal">
             <h2>Links</h2>
             <ul>
                 <li><a href="https://github.com/sudhishmk" target="_blank">GitHub</a></li>
@@ -199,28 +277,47 @@
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section reveal" id="talks">
             <h2>Conferences & Speaking Engagements</h2>
             <ul>
                 <li><strong>KubeCon + CloudNativeCon India 2026</strong> - From Textbooks to YAML: Mapping Your CS Degree to the Cloud Native World - <a href="https://kccncind2026.sched.com/event/2IW4H/from-textbooks-to-yaml-mapping-your-cs-degree-to-the-cloud-native-world-parvathy-nair-adi-shankara-institute-of-engineering-and-technology-sudhish-nair-red-hat" target="_blank" rel="noopener noreferrer">Schedule</a> | <a href="https://docs.google.com/presentation/d/1tnSTh4ydSbbW4Wj1Kx4KZLFwgzniK-Ml/edit?usp=sharing&amp;ouid=110416375121162361517&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">PPT</a> | <a href="https://www.youtube.com/watch?v=4PXcoIambCU&amp;list=PLj6h78yzYM2PmaTdAzefPqjawTlop1lgG&amp;index=15" target="_blank" rel="noopener noreferrer">Video</a></li>
-                <li><strong>DMCON 2025</strong> - Backstage Unlocked -: Building Developer Portals that Scale - <a href="https://docs.google.com/presentation/d/1SWN3i9zhw5eiim-wdyRq_hqxLs2mdM7R/edit?usp=sharing&ouid=110416375121162361517&rtpof=true&sd=true" target="_blank">PPT</a> 
+                <li><strong>DMCON 2025</strong> - Backstage Unlocked -: Building Developer Portals that Scale - <a href="https://docs.google.com/presentation/d/1SWN3i9zhw5eiim-wdyRq_hqxLs2mdM7R/edit?usp=sharing&ouid=110416375121162361517&rtpof=true&sd=true" target="_blank">PPT</a></li>
                 <li><strong>DevConf.in 2025</strong> - Automating AI/ML workflows with Red Hat OpenShift AI - <a href="https://docs.google.com/presentation/d/1E2O8WiQD2JGiQtNrOc8hZDceOJKS4qaOe4PbNhxqicA/edit?usp=sharing" target="_blank">PPT</a> | <a href="https://www.youtube.com/watch?v=GOK9g8XCb3o&list=PLU1vS0speL2ZvQRS0Hg0xIgTPOyxUmBK4&index=46" target="_blank">Video</a></li>
                 <li><strong>KCD Kerala 2024</strong> - Pipelines for Kubernetes -: Tekton - <a href="https://docs.google.com/presentation/d/1PHgi4QO8rTp6qfgJT2sKps3EYvKQq1a7u7wfcUxXJw8/edit?usp=sharing" target="_blank">PPT</a> | <a href="https://youtu.be/rTs5qJa3hNM?feature=shared" target="_blank">Video</a></li>
                 <li><strong>DMCON 2024</strong> - Leverage Tekton Pipelines for Automated Workflow Management - <a href="https://docs.google.com/presentation/d/1ArKsgwjACJBvZkZbsNOW1aJqydBIWsfKxLm7uWyKV_w/edit?usp=sharing" target="_blank">PPT</a> | <a href="https://www.youtube.com/watch?v=YPDDaq2C_TE" target="_blank">Video</a></li>
             </ul>
         </section>
 
-        <section class="section">
+        <section class="section reveal">
             <h2>Learning Courses Created</h2>
             <ul>
                 <li><strong>- 15-Day Tekton Expertise Plan -</strong> <a href="https://sudhishmk.github.io/Tekton-learning/" target="_blank">Page</a> | <a href="https://github.com/sudhishmk/Tekton-learning.git" target="_blank">Repository</a></li>
             </ul>
         </section>
 
-        <footer>
+        <footer id="contact">
             <p>© 2026 Sudhish Nair | Contact: sudhinonofficial@gmail.com</p>
         </footer>
     </div>
 
+    <script>
+        document.documentElement.classList.add('js');
+        const sections = document.querySelectorAll('.reveal');
+        const showSection = (entry) => entry.target.classList.add('is-visible');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, currentObserver) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        showSection(entry);
+                        currentObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            sections.forEach((section) => observer.observe(section));
+        } else {
+            sections.forEach((section) => section.classList.add('is-visible'));
+        }
+    </script>
 </body>
 </html>
